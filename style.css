@@ -1,0 +1,170 @@
+/* CSS Document */
+
+body {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+/* Page de connexion */
+form#connexion {
+  font-family: Verdana;
+  font-size: small;
+  margin: auto;
+  width: 250px;
+  margin-top: 200px;
+  text-align:center;
+}
+
+form#connexion input {
+  display: inline;
+  border: 1px solid black;
+  text-align: center;
+   width: 150px;
+   display: block;
+   margin: auto;
+}
+
+form#connexion input#submit {
+  width: 100px;
+}
+
+form#connexion fieldset legend{
+  font-size: x-small;
+}
+
+form#connexion fieldset label {
+display : block;
+text-align:left;
+margin: 5px;
+}
+
+
+
+/* page de stats */
+
+div.code {
+border: 1px solid black;
+margin-left: 200px;
+width: 500px;
+padding: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+a {
+text-decoration : none;
+}
+img {
+border:0;
+}
+
+table, tr, td, th {
+	border-collapse: collapse;
+	border: 1px solid black;
+	font-size: 12px;
+	font-family: Verdana;
+	padding: 2px;
+	margin:0;
+}
+td.date, th.date {
+  width: 80px;
+}
+td.description, th.description {
+  width: 300px;
+}
+td.debit, th.debit, td.credit, th.credit, td.solde, th.solde {
+  width: 80px;
+  text-align:center;
+}
+
+/* Menu */
+#menu {
+	float: left;
+	border: 1px solid black;
+	margin: 20px;
+	margin-top: 100px;
+	width: 150px;
+	clear: both;
+}
+
+
+
+/* Options */
+#options {
+border: 1px solid black;
+float: left;
+clear: both;
+width: 150px;
+margin: 20px;
+margin-top: 0;
+padding: 2px;
+}
+
+/* Soldes */
+#solde {
+border: 1px solid black;
+float: left;
+clear: both;
+width: 150px;
+margin: 20px;
+margin-top: 0;
+padding: 2px;
+}
+
+
+
+
+
+
+/***************** CALENDRIER *********************************/
+.ds_box {
+	background-color: #FFF;
+	border: 1px solid #000;
+	position: absolute;
+	z-index: 32767;
+}
+
+.ds_tbl {
+	background-color: #FFF;
+}
+
+.ds_head {
+	background-color: #333;
+	color: #FFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center;
+	letter-spacing: 2px;
+}
+
+.ds_subhead {
+	background-color: #CCC;
+	color: #000;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	width: 32px;
+}
+
+.ds_cell {
+	background-color: #EEE;
+	color: #000;
+	font-size: 13px;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.ds_cell:hover {
+	background-color: #F3F3F3;
+} /* This hover code won't work for IE */

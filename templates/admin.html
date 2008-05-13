@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN http://www.w3.org/TR/html4/loose.dtd">
+ <html>
+    <head>
+	<title>Test smarty</title>
+	<link rel="stylesheet" media="screen" type="text/css" title="Style" href="./style.css" />
+	<link rel="StyleSheet" href="dtree.css" type="text/css" />
+	<script type="text/javascript" src="dtree.js"></script>
+	<script type="text/javascript" src="scripts/editor.js"></script>
+	{literal}
+        <script language="JavaScript">      
+	    var state = 0;
+	    function display_new()
+	    {
+		if ( document.forms.form_cat.name_cat_hidden.value == '') {
+		    window.alert('Attention, vous n\'avez pas selectionné de catégorie');
+		    return;
+		}
+		document.getElementById('buttons2').style.display='block';
+		document.getElementById('buttons1').style.display='none';
+		document.getElementById('button2_left').value='Nouveau';
+		var name = document.forms.form_cat.name_cat_hidden.value;
+		document.forms.form_cat.name_cat.value = '';
+		document.getElementById('h4_title').innerHTML = 'Nouvelle catégorie (dans ' + name + ') ';
+		document.forms.form_cat.state.value = 1;
+	    }
+
+	    function display_modif()
+	    {
+		if ( document.forms.form_cat.name_cat_hidden.value == '') {
+		    window.alert('Attention, vous n\'avez pas selectionné de catégorie');
+		    return;
+		}
+	 	document.getElementById('buttons2').style.display='block';
+	  	document.getElementById('buttons1').style.display='none';
+	   	document.getElementById('button2_left').value='Modifier';
+	    	var name = document.forms.form_cat.name_cat_hidden.value;
+	     	document.forms.form_cat.name_cat.value = name;
+	      	document.getElementById('h4_title').innerHTML=
+		    'Modification de la catégorie '+ name +' :';
+		document.forms.form_cat.state.value = 2;
+	    }
+
+        function analyse_state() {
+            if(document.forms.form_cat.state.value == 0) {
+                return;
+                }
+            if(document.forms.form_cat.state.value == 1) {
+                display_new();
+                return;
+                }
+            if(document.forms.form_cat.state.value == 2) {
+                display_modif();
+                return;
+                }
+                alert('ERREUR state = ' + document.forms.form_cat.state.value);
+        }
+
+        function display_orig() {
+           document.forms.form_cat.state.value = 0;
+           document.getElementById('buttons1').style.display='block';
+           document.getElementById('buttons2').style.display='none';
+        }
+
+	function confirm_remove()
+	{
+	    if(confirm("Voulez-vous vraiment supprimer la catégorie " + document.forms.form_cat.name_cat_hidden.value + "?")) {
+		document.forms.form_cat.state.value = 3;
+		document.forms.form_cat.submit();
+	    }
+	}
+
+
+        </script>
+    {/literal}
+	</head>
+<body>
+
+
+
+{include file="menu.html"}
+
+<div id="debug">
+{$DEBUG}
+</div>
+
+
+
+<form method="post" action="./admin.php" name="form_cat" >
+    <fieldset>
+    <legend>Test de l'arbre</legend>
+
+    <div class="dtree">
+    <p><a href="javascript: d.openAll();">open all</a> | <a href="javascript: d.    closeAll();">close all</a></p>
+    {$TEST}
+    </div>
+    
+    <div id="buttons1" style="display: block">
+        <input type="button" value="Nouveau" onClick="display_new()" />
+        <input type="button" value="Modifier" onClick="display_modif()" />
+        <input type="button" value="Supprimer" name="del" onClick="confirm_remove()" />
+        <br /><br />
+    </div>
+
+    <input type="hidden" name="id_cat" size="10" maxlength="20" />
+    <input type="hidden" name="name_cat_hidden" size="10" maxlength="20" value='' />
+    <input type="hidden" name="state" id="state" value='0' />
+
+    <div id="buttons2" style="display: none">
+        <h4 id="h4_title">Vide</h4>
+        <input type="text" name="name_cat" size="30" maxlength="20" />
+        <input type="text" name="color_cat" size="10" maxlength="20" />
+
+	<dl style="clear: left;">
+	    <dt><label>Couleur de la police:</label></dt>
+	    <dd>
+	    {literal}
+	    <script type="text/javascript">
+		<!--
+		colorPalette('h', 15, 5);
+		//-->
+	    </script>
+	    {/literal}
+	    </dd>
+	</dl>
+
+        <input id="button2_left" type="submit" value="Valider" name="valider" />
+        <input type="button" value="Annuler" onClick="display_orig()"/>
+    </div>
+
+    </fieldset>
+</form>
+
+{include file="stats.html"}
+	</body>
+</html>

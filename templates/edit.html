@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+ <html>
+	<head>
+		<title>Test smarty</title>
+		<link rel="stylesheet" media="screen" type="text/css" title="Style" href="./style.css" />
+		<script language="JavaScript" SRC="scripts/FSdateSelect.js"></script>
+        <link rel="stylesheet" href="styles/FSdateSelect.css" type="text/css">
+	</head>
+	
+<body onLoad="javascript:opener.location.reload();">
+
+{literal}
+<script type="text/javascript">function Choix(f) {
+	window.alert('test');
+	f.submit();
+}
+</script>
+{/literal}
+
+
+<form method="post" action="./edit.php" name="DateForm">
+date
+<SCRIPT LANGUAGE="JavaScript">FSfncWriteFieldHTML("DateForm","MyDate","{$HIST.date}",100,"images/FSdateSelector/","FR",true,true)</SCRIPT>
+
+
+Catégorie
+<select name="id_cat" >{html_options values=$CAT_IDS output=$CAT_NAMES selected=$HIST.cat}</select>
+<br />
+
+Description
+<input type="text" name="description" size="30" value="{$HIST.description}" />
+<br />
+
+Type
+<input type="radio" name="type" value="debit" {$HIST.debit} />Débit
+<input type="radio" name="type" value="credit" {$HIST.credit} />Crédit
+<br />
+
+
+somme
+<input type="text" name="somme" size="30" value="{$HIST.valeur}" />
+<br />
+
+pointage
+<input type="checkbox" name="pointage" size="30" {$HIST.checked} />
+<br />
+
+<input name="valider" type="submit" />
+<input name="Fermer" type="submit" />
+<input type="hidden" value="{$HIST.modif}" name="modif">
+</form>
+
+
+</table>
+
+
+</body>
+</html>

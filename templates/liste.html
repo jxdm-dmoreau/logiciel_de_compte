@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+ <html>
+	<head>
+		<title>Test smarty</title>
+		<link rel="stylesheet" media="screen" type="text/css" title="Style" href="./style.css" />
+	{literal}
+        <script language="JavaScript">
+        self.name='page_list';
+        function my_popup(name, intern_name) {
+           window.open (name, intern_name, config='height=300, width=600, toolbar=no, menubar=no, scrollbars=no, resizable=yes, location=no, directories=no, status=no')
+        }
+        </script>
+    {/literal}
+	</head>
+<body>
+	
+{include file="menu.html"}
+<div id="solde">
+<ul>
+<li>Solde : {$SOLDE}</li>
+<li>Solde pointé : {$SOLDE_P}</li>
+</ul>
+</div>
+
+
+<table>
+<tr>
+<th class="id">Id</th>
+<th class="date">Date</th>
+<th class="categorie">Catégorie</th>
+<th class="description">Description</th>
+<th class="debit">Débit</th>
+<th class="credit">Crédit</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+
+{foreach item=ligne from=$TAB}
+<tr>
+<td>{$ligne.id}</td>
+<td>{$ligne.date}</td>
+<td>{$ligne.categorie}</td>
+<td>{$ligne.description}</td>
+<td>{$ligne.debit}</td>
+<td>{$ligne.credit}</td>
+{if $ligne.checked==1}
+<td><img src="./images/checked.jpg" /></td>
+{else}
+<td><form method="post" action="./liste.php?id={$ligne.id}"><input name="submit" value="Vu" type="submit" /></form></td>
+{/if}
+<td><a href="javascript:my_popup('edit.php?edit={$ligne.id}','Edit');"><img src="./images/edit.png" /></a></td>
+<td>
+<a href="./liste.php?drop={$ligne.id}"
+{literal}
+onclick="if (window.confirm('Vous etes sur de ne pas faire une betise ?'))
+{return true;} else {return false;}">
+{/literal}
+<img src="./images/drop.png" /></a></td>
+</tr>
+{/foreach}
+</table>
+
+
+
+  {include file="stats.html"}
+	</body>
+</html>

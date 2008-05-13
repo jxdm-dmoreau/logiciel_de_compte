@@ -1,0 +1,5 @@
+Salaire	
+Loyer
+Informatique
+vetements
+nourriture

@@ -1,0 +1,54 @@
+<chart>
+<axis_category size='14' color='000000' alpha='0' font='arial' bold='true' skip='0' orientation='horizontal' />
+<axis_ticks value_ticks='true' category_ticks='true' major_thickness='2' minor_thickness='1' minor_count='1' major_color='000000' minor_color='222222' position='outside' />
+<axis_value min='0' max='120' font='arial' bold='true' size='10' color='ffffff' alpha='50' steps='6' prefix='' suffix='' decimals='0' separator='' show_min='true' />
+<chart_border color='000000' top_thickness='2' bottom_thickness='2' left_thickness='2' right_thickness='2' />
+	<chart_data>
+		<row>
+			<null/>
+			<string>1</string>
+			<string>2</string>
+			<string>3</string>
+			<string>4</string>
+			<string>5</string>
+			<string>6</string>
+			<string>7</string>
+			<string>8</string>
+			<string>9</string>
+			<string>10</string>
+			<string>11</string>
+			<string>12</string>
+		</row>
+		<row>
+			<string>Alimentation</string>
+			<number>150</number>
+			<number>0</number>
+			<number>123</number>
+			<number>0</number>
+			<number>0</number>
+			<number>0</number>
+			<number>0</number>
+			<number>0</number>
+			<number>0</number>
+			<number>0</number>
+			<number>123</number>
+			<number>0</number>
+		</row>
+		<row>
+			<string>Logement</string>
+			<number>0</number>
+			<number>0</number>
+			<number>570</number>
+			<number>0</number>
+			<number>0</number>
+			<number>0</number>
+			<number>0</number>
+			<number>0</number>
+			<number>0</number>
+			<number>0</number>
+			<number>0</number>
+			<number>0</number>
+		</row>
+	</chart_data>
+	<chart_type>Line</chart_type>
+</chart>

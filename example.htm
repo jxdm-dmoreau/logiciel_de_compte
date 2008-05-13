@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<HTML>
+<HEAD>
+<TITLE>JavaScript Date Selector</TITLE>
+<SCRIPT LANGUAGE="JavaScript" SRC="scripts/FSdateSelect.js"></SCRIPT>
+<LINK REL="stylesheet" HREF="styles/FSdateSelect.css" type="text/css">
+</HEAD>
+
+<BODY>
+<FORM ACTION="index.htm" METHOD="GET" NAME="DateForm">
+<P><B>JavaScript Date Selector</B></P>
+<TABLE BORDER="0" CELLSPACING="2" CELLPADDING="2" BGCOLOR="#EEEEEE" STYLE="border:1px solid black">
+	<TR>
+		<TD WIDTH=200 NOWRAP>Mouseover to select date:</TD>
+		<TD><SCRIPT LANGUAGE="JavaScript">FSfncWriteFieldHTML("DateForm","MyDate1","None",100,"images/FSdateSelector/")</SCRIPT></TD>
+	</TR>
+	<TR>
+		<TD>Click to select date (none disabled):</TD>
+		<TD><SCRIPT LANGUAGE="JavaScript">FSfncWriteFieldHTML("DateForm","MyDate2","13/04/2007",100,"images/FSdateSelector/","EN",true,true)</SCRIPT></TD>
+	</TR>
+	<TR>
+		<TD>Position specified:</TD>
+		<TD><SCRIPT LANGUAGE="JavaScript">FSfncWriteFieldHTML("DateForm","MyDate3","13/04/2007",100,"images/FSdateSelector/","EN",false,true,99,-21)</SCRIPT></TD>
+	</TR>
+	<TR>
+		<TD>US format dates:</TD>
+		<TD><SCRIPT LANGUAGE="JavaScript">FSfncWriteFieldHTML("DateForm","MyDate4","04/13/2007",100,"images/FSdateSelector/","US",false,true)</SCRIPT></TD>
+	</TR>
+	<TR>
+		<TD>Spanish:</TD>
+		<TD><SCRIPT LANGUAGE="JavaScript">FSfncWriteFieldHTML("DateForm","MyDate5","Ninguna",100,"images/FSdateSelector/","ES",false,true)</SCRIPT></TD>
+	</TR>
+	<TR>
+		<TD>Spanish with US format dates:</TD>
+		<TD><SCRIPT LANGUAGE="JavaScript">FSfncWriteFieldHTML("DateForm","MyDate6","Ninguna",100,"images/FSdateSelector/","ESUS",false,true)</SCRIPT></TD>
+	</TR>
+	<TR>
+		<TD>French:</TD>
+		<TD><SCRIPT LANGUAGE="JavaScript">FSfncWriteFieldHTML("DateForm","MyDate7","Aucune",100,"images/FSdateSelector/","FR",false,true)</SCRIPT></TD>
+	</TR>
+	<TR>
+		<TD>German:</TD>
+		<TD><SCRIPT LANGUAGE="JavaScript">FSfncWriteFieldHTML("DateForm","MyDate8","Kein",100,"images/FSdateSelector/","DE",false,true)</SCRIPT></TD>
+	</TR>
+	<TR>
+		<TD>Sample Rolldown:</TD>
+		<TD><SELECT STYLE="width:100px"><OPTION>option 1</OPTION><OPTION>option 2</OPTION><OPTION>option 3</OPTION></SELECT></TD>
+	</TR>
+</TABLE>
+<P>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.
+<P>Accumsan et iusto dignissuim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Eros Et Accumsan dignissim qui blandit prasent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</P>
+</FORM>
+</BODY>
+</HTML>
