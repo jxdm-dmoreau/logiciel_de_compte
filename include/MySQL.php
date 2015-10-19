@@ -23,7 +23,7 @@ class MySQL {
   function query($query) {
     $result = mysql_query($query);
     $this->nbRequest++;
-    // Vérification du résultat
+    // VÃ©rification du rÃ©sultat
     if (!$result) {
 		  $message  = '<b>Requete invalide :</b> ' . mysql_error() . '<br>';
 		  $message .= '<b>Requete complete :</b> ' . $query;
@@ -38,6 +38,11 @@ class MySQL {
 
 
 	function delete($id) {
+			$bad_strings = array("\b", "\0", "\n", "\r", "\t", "\z",
+                		 "/n", "/0", "/n", "/r", "/t", "/z",
+                     		"$", "'", '"', "%", ";", "_", "*",
+                     		"`", "drop table");
+                     	$id = str_replace($bad_strings, "", $id); //Avoid SQL Injection	
 			$query = "DELETE FROM transactions WHERE  id='$id'";
 			$result = mysql_query($query);
 			if(!$result) {
